@@ -1,0 +1,10 @@
+@import '../../styles/Colors.scss';
+
+.button-container {
+  background: $colorSecondary;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

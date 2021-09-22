@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import { Switch } from 'react-router-dom';
+import { userSession } from './auth';
+
+import ConnectPage from './pages/connectPage/ConnectPage';
+import HomePage from './pages/homePage/HomePage';
+import PrivateRoute from './Routes/PrivateRoute';
+import PublicRoute from './Routes/PublicRoute';
+import './App.scss';
 
 function App() {
+  const [userData, setUserData] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <PrivateRoute
+          path="/home"
+          connected={userSession.isUserSignedIn()}
+          component={(props) => <HomePage />}
+        />
+        <PublicRoute
+          exact
+          path="/"
+          connected={userSession.isUserSignedIn()}
+          component={(props) => <ConnectPage />}
+        />
+      </Switch>
     </div>
   );
 }
