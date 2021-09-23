@@ -1,25 +1,13 @@
-import { useEffect } from 'react';
-
-import { getPerson, userSession } from '../../auth';
-import CustomButton from '../../components/custom-button/CustomButton';
+import NavBar from '../../components/NavBar/NavBar';
 import './HomePage.scss';
 
-const HomePage = () => {
-  useEffect(() => {
-    console.log(getPerson());
-  }, []);
-
-  const handleClick = () => {
-    userSession.signUserOut();
-    window.location.reload();
-  };
-
-  return (
-    <div className="home-container">
-      <h1>HOME</h1>
-      <CustomButton onClick={handleClick}>Disconnect Wallet</CustomButton>
+const HomePage = () => (
+  <div className="home-outter-container">
+    <NavBar />
+    <div className="home-bottom-container">
+      <h1 className="heading">Home Page</h1>
     </div>
-  );
-};
+  </div>
+);
 
 export default HomePage;

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Switch } from 'react-router-dom';
 import { userSession } from './auth';
 
@@ -9,8 +8,6 @@ import PublicRoute from './Routes/PublicRoute';
 import './App.scss';
 
 function App() {
-  const [userData, setUserData] = useState(null);
-
   return (
     <div>
       <Switch>

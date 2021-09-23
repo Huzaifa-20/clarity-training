@@ -6,6 +6,7 @@ import './ConnectPage.scss';
 
 const ConnectPage = () => {
   const [selected, setSelected] = useState(false);
+
   const handleClick = () => {
     if (!selected) {
       authenticate();
