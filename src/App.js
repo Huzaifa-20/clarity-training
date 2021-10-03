@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Switch } from 'react-router-dom';
 import { userSession } from './auth';
 
@@ -9,21 +8,19 @@ import PublicRoute from './Routes/PublicRoute';
 import './App.scss';
 
 function App() {
-  const [userData, setUserData] = useState(null);
-
   return (
     <div>
       <Switch>
         <PrivateRoute
           path="/home"
           connected={userSession.isUserSignedIn()}
-          component={(props) => <HomePage />}
+          component={() => <HomePage />}
         />
         <PublicRoute
           exact
           path="/"
           connected={userSession.isUserSignedIn()}
-          component={(props) => <ConnectPage />}
+          component={() => <ConnectPage />}
         />
       </Switch>
     </div>

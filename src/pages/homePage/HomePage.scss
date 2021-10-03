@@ -1,11 +1,44 @@
 @import '../../styles/Colors.scss';
 
-.home-container {
+.home-outter-container {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  overflow-y: visible;
+  overflow-x: hidden;
   background: $colorSecondary;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  .profile-container {
+    padding: 8rem 16rem;
+    margin: 2rem 4rem;
+    border-radius: 1.25rem;
+    background: url('../../images/plainBackground.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .profile-container-heading {
+      font-family: 'Montserrat';
+      font-size: 8rem;
+      text-align: center;
+      color: rgb(240, 240, 240);
+      cursor: default;
+
+      span {
+        color: $colorFocusText;
+      }
+    }
+
+    .profile-container-text {
+      font-family: 'Montserrat';
+      font-size: 1.5rem;
+      text-align: center;
+      color: $colorRegularText;
+      cursor: default;
+    }
+  }
 }

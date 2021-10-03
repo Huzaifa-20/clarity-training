@@ -21,5 +21,6 @@ module.exports = {
     'react/jsx-curly-newline': 'off',
     'react/react-in-jsx-scope': 'off',
     'no-nested-ternary': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
 };

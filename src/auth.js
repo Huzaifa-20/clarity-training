@@ -5,7 +5,7 @@ const appConfig = new AppConfig(['store_write', 'publish_data']);
 
 export const userSession = new UserSession({ appConfig });
 
-export function authenticate() {
+export function authenticate(setSelected) {
   showConnect({
     appDetails: {
       name: 'Training-App',
@@ -16,6 +16,9 @@ export function authenticate() {
       window.location.reload();
     },
     userSession,
+    onCancel: () => {
+      setSelected(false);
+    },
   });
 }
 
