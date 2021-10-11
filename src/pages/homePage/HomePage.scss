@@ -1,31 +1,71 @@
 @import '../../styles/Colors.scss';
 
 .home-outter-container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: visible;
   overflow-x: hidden;
   background: $colorSecondary;
   flex-direction: column;
 
-  .profile-container {
-    padding: 8rem 16rem;
-    margin: 2rem 4rem;
-    border-radius: 1.25rem;
-    background: url('../../images/plainBackground.jpg');
-    background-size: cover;
+  .section-profile {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 
-    .profile-container-heading {
+    .profile-container {
+      padding: 8rem 16rem;
+      margin: 0 4rem;
+      border-radius: 1.25rem;
+      background: url('../../images/plainBackground.jpg');
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .profile-container-heading {
+        margin: 0 0 2rem 0;
+        font-family: 'Montserrat';
+        font-size: 8rem;
+        text-align: center;
+        color: rgb(240, 240, 240);
+        cursor: default;
+
+        span {
+          color: $colorFocusText;
+        }
+      }
+
+      .profile-container-text {
+        margin: 0 0 4rem 0;
+        font-family: 'Montserrat';
+        font-size: 1.5rem;
+        text-align: center;
+        color: $colorRegularText;
+        cursor: default;
+      }
+
+      .profile-container-button {
+        margin: 0;
+      }
+    }
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+  .section-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section-action-heading {
+      margin: 0;
       font-family: 'Montserrat';
-      font-size: 8rem;
-      text-align: center;
-      color: rgb(240, 240, 240);
+      font-size: 4rem;
+      color: $colorRegularText;
+      margin-bottom: 4rem;
       cursor: default;
 
       span {
@@ -33,12 +73,11 @@
       }
     }
 
-    .profile-container-text {
-      font-family: 'Montserrat';
-      font-size: 1.5rem;
-      text-align: center;
-      color: $colorRegularText;
-      cursor: default;
+    .action-cards {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 8rem;
     }
   }
 }
